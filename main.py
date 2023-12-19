@@ -43,6 +43,13 @@ def make_running_changes(device):
     try:
         changes = """
                     <config>
+                        <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
+                            <enable>
+                                <password>
+                                    <secret>cisco123!</secret>
+                                </password>
+                            </enable>
+                        </native>
                         <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
                             <interface>
                                 <name>GigabitEthernet1</name>
@@ -59,7 +66,7 @@ def make_running_changes(device):
                                         <netmask>255.255.255.255</netmask>
                                     </address>
                                 </ipv4>
-                    </interface>
+                            </interface>
                         </interfaces>
                     </config>
                 """
